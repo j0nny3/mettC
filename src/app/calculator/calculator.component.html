@@ -1,0 +1,35 @@
+<div class="m-5 ">
+  <div class="container my-5">
+
+
+    <p class="col-3"></p>
+    <h1 >MettC</h1>
+  </div>
+
+  <form #f="ngForm" class="container my-5" (ngSubmit)="onSubmit(f)">
+    <label> Personen:</label>
+    <input name="peopleAmount" ngModel required/>
+    <button>Berechnen</button>
+  </form>
+
+  <div class="container">
+    <div *ngIf="mettAmount">
+      <p>Brötchen: {{ broetchenAmount }}</p>
+    <p > Mett:  {{ mettAmount }}g</p>
+    <p > Zwiebel</p>
+    </div>
+  </div>
+
+  <div *ngIf="mettAmount" ngbAccordion>
+    <div ngbAccordionItem>
+      <div ngbAccordionHeader>
+        <div ngbAccordionToggle> Mehr</div>
+      </div>
+      <div ngbAccordionCollapse>
+        <div ngbAccordionBody>
+          {{mettAmount}}g Mett = {{broetchenPerPerson}} Brötchen pro Person (aufgerundet)  mit {{mettPerHalbesBroetchen}}g Mett pro Brötchenhälfte
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
