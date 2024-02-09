@@ -1,0 +1,1 @@
+(function(){var e="dark-mode",o="light-mode",d="dark-mode-preloading",l="dark-mode",r=localStorage[l],a=!1;if(r)try{var s=JSON.parse(r);a=s.darkMode}catch(n){console.warn("Error initializing angular-dark-mode"),console.warn(n);return}else{var i="(prefers-color-scheme: dark)";a=window.matchMedia(i).matches}document.body.classList.add(d,a?e:o)})();
